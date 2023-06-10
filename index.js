@@ -14,8 +14,9 @@ const database = getDatabase(app);
 const shoppingListInDB = ref(database, "shoppingList");
 const inputField = document.querySelector("#input-field");
 const addButton = document.querySelector("#add-button");
-const shoppingCard = document.querySelector("#shopping-card");
+// const shoppingCart = document.querySelector("#shopping-cart");
 
+const shoppingList = document.querySelector("#shopping-list");
 //function to clear input field
 function clearInputField() {
 	inputField.value = "";
@@ -26,22 +27,20 @@ addButton.addEventListener("click", function () {
 	let inputValue = inputField.value;
 	// clear input field after each button click
 	clearInputField();
-	//add inputValue to list
-	appendListItem(inputValue);
+	//add inputValue to list database:
 	push(shoppingListInDB, inputValue);
 });
 
 //onValue function to get the shopping List object from the datatbase and convert it to an array
 onValue(shoppingListInDB, function (snapshot) {
-	const groceryList = Object.values(snapshot.val());
-	console.log(groceryList);
+	const groceryListArray = Object.values(snapshot.val());
+	shoppingList.innerHTML = " ";
+	for (let i = 0; i < groceryListArray.length; i++) {
+		appendListItem(groceryListArray[i]);
+	}
 });
 
-// function to create unordered list adn append the list item to list.
+//add item to shopping cart
 function appendListItem(item) {
-	const ul = document.createElement("ul");
-	const listItem = document.createElement("li");
-	listItem.textContent = `${item}`;
-	ul.appendChild(listItem);
-	return shoppingCard.appendChild(ul);
+	shoppingList.innerHTML += `<li>${item}</li>`;
 }

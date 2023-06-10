@@ -7,38 +7,35 @@
 body {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-
 	background-color: antiquewhite;
 }
 
-#shopping-card {
-	margin: 50px auto;
+#shopping-cart {
+	margin: 20px auto;
 	border: 3px solid rgb(26, 26, 26);
 	padding: 10px;
 	border-radius: 15px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 10% 0;
 	padding: 5% 2%;
 	gap: 1rem;
 }
 
-#shopping-card img {
+#shopping-cart img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-#shopping-card input {
+#shopping-cart input {
 	border-radius: 5px;
 	height: 40px;
 	text-align: center;
 	font-size: 1.1rem;
 }
 
-#shopping-card button {
+#shopping-cart button {
 	width: 100%;
 	border: none;
 	border-radius: 5px;
@@ -48,6 +45,6 @@ body {
 	font-size: 1.2rem;
 }
 
-#shopping-card ul {
+#shopping-cart ul {
 	list-style: none;
 }

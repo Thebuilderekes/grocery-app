@@ -4,15 +4,28 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--primary-color: antiquewhite;
+	--accent-color: #105a10;
+	--secondary-color: #fad39f;
+}
+
+@font-face {
+	font-family: "Nunito";
+	src: url(/fonts/Nunito-VariableFont_wght.ttf);
+}
+
 body {
 	display: flex;
 	justify-content: center;
-	background-color: antiquewhite;
+	background-color: var(--primary-color);
+	font-family: "Nunito";
 }
 
 #shopping-cart {
+	max-width: 400px;
 	margin: 20px auto;
-	border: 3px solid rgb(26, 26, 26);
+	border: 3px solid #1a1a1a;
 	padding: 10px;
 	border-radius: 15px;
 	display: flex;
@@ -29,17 +42,22 @@ body {
 }
 
 #shopping-cart input {
+	width: 100%;
 	border-radius: 5px;
 	height: 40px;
 	text-align: center;
 	font-size: 1.1rem;
+}
+#shopping-cart span {
+	color: red;
+	font-size: 12px;
 }
 
 #shopping-cart button {
 	width: 100%;
 	border: none;
 	border-radius: 5px;
-	background-color: rgb(16, 90, 16);
+	background-color: var(--accent-color);
 	color: antiquewhite;
 	padding: 10px 30px;
 	font-size: 1.2rem;
@@ -47,4 +65,17 @@ body {
 
 #shopping-cart ul {
 	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+#shopping-cart ul li {
+	background-color: var(--secondary-color);
+	border-radius: 10px;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+	padding: 5px 10px;
+	cursor: pointer;
 }

@@ -26,6 +26,12 @@ function error(message) {
 	return message;
 }
 
+function sanitizeInput(input) {
+	// Remove all non-alphabetic characters using a regular expression
+	var sanitizedInput = input.replace(/[^A-Za-z]/g, "");
+
+	return sanitizedInput;
+}
 //eventlistener on click of button to add item to list
 addButton.addEventListener("click", function () {
 	let inputValue = inputField.value;
@@ -33,7 +39,7 @@ addButton.addEventListener("click", function () {
 	clearInputField();
 	//add inputValue to list database:
 	if (inputValue.length > 0) {
-		push(shoppingListInDB, inputValue);
+		push(shoppingListInDB, sanitizeInput(inputValue));
 		errorMessage.textContent = "";
 	} else {
 		errorMessage.textContent = `${error("Input cannot be empty")}`;

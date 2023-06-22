@@ -28,7 +28,7 @@ function error(message) {
 
 function sanitizeInput(input) {
 	// Remove all non-alphabetic characters using a regular expression
-	var sanitizedInput = input.replace(/[^A-Za-z]/g, "");
+	const sanitizedInput = input.replace(/[^A-Za-z0-9\s]/g, "");
 
 	return sanitizedInput;
 }

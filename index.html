@@ -1,41 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Grocery app</title>
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="/img/favicon_io/apple-touch-icon.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="/img/favicon_io/favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="/img/favicon_io/favicon-16x16.png"
-		/>
-		<link rel="manifest" href="/img/favicon_io/site.webmanifest" />
-		<link rel="stylesheet" href="/css/style.css" />
-	</head>
-	<body>
-		<section id="shopping-cart">
-			<img src="/img/cart-icon.png" alt=" a cart icon" />
-			<h1>SmartCart</h1>
-			<input type="text" name="" id="input-field" placeholder="Perfume" />
-			<span></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery app</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/img/favicon_io/site.webmanifest" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <section class="fade-in tutorial">
+      <h2>Quick tutorial</h2>
 
-			<button js-button id="add-button">Add to cart</button>
-			<ul id="shopping-list"></ul>
-		</section>
+      <ol class="steps">
+        <li>Enter the name of the grocery in the input field.</li>
+        <li>Tap or click the "add" button.</li>
+        <li>The grocery will be added to the list on the screen.</li>
+        <li>To delete an item from the list, tap or click on the item.</li>
+        <li>The item will be removed from the list.</li>
+		<li>Any added item will be stored even after browser refresh.</li>
+      </ol>
 
-		<script src="index.js" type="module"></script>
-	</body>
+	  <button class="proceed-btn">Continue</button>
+
+    </section>
+    <main class=""fade-in-last>
+      <section id="shopping-cart">
+        <img src="/img/cart-icon.png" alt=" a cart icon" />
+        <h1>Smart cart</h1>
+        <input type="text" name="" id="input-field" placeholder="Perfume" />
+        <span></span>
+
+        <button js-button id="add-button">Add to cart</button>
+        <ul id="shopping-list"></ul>
+      </section>
+    </main>
+
+    <script src="index.js" type="module"></script>
+  </body>
 </html>

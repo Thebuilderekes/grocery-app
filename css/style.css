@@ -25,14 +25,82 @@ body {
 body {
 	display: flex;
 	justify-content: center;
+
 	background-color: var(--primary-color);
 	font-family: "Nunito";
 }
 
-#shopping-cart {
-	width: 100vh;
-	margin: 80px auto;
+body main {
+	padding: 0 2rem;
+}
 
+button {
+	cursor: pointer;
+}
+
+.fade-in {
+	animation: fade-in 1s ease-in-out;
+}
+.fade-in-last {
+	animation: fade-in 3s ease-in-out;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in-last {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.tutorial {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: blanchedalmond;
+	z-index: 20;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.tutorial h2 {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.tutorial ol li {
+	margin: 20px 0;
+	font-weight: 700;
+}
+
+.proceed-btn {
+	background-color: #105a10;
+	color: aliceblue;
+	font-weight: 700;
+	margin: 20px 0;
+	padding: 10px 20px;
+}
+
+.tutorial.display-none {
+	display: none;
+}
+
+#shopping-cart {
+	width: 90vw;
+	margin: 80px auto;
 	padding: 10px;
 	border-radius: 15px;
 	display: flex;
@@ -40,6 +108,12 @@ body {
 	align-items: center;
 	padding: 0 5%;
 	gap: 1rem;
+}
+
+@media (min-width: 768px) {
+	#shopping-cart {
+		width: 50vw;
+	}
 }
 
 #shopping-cart img {
@@ -78,20 +152,24 @@ body {
 
 #shopping-cart ul {
 	list-style: none;
-	display: flex;
-	flex-wrap: wrap;
 	gap: 10px;
 }
 
 #shopping-cart ul li {
+	display: flex;
+	gap: 100px;
+	justify-content: space-between;
+	align-items: center;
 	background-color: var(--secondary-color);
 	border-radius: 10px;
 	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
 	padding: 5px 10px;
+	margin: 10px 0;
 	cursor: pointer;
-	font-weight: 600;
+	font-size: clamp(20px, 5vw, 30px);
+	font-weight: 700;
 }
 
 #shopping-cart ul li:hover {

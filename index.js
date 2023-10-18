@@ -16,6 +16,8 @@ const shoppingListInDB = ref(database, "shoppingList");
 const inputField = document.querySelector("#input-field");
 const errorMessage = document.querySelector("span");
 const addButton = document.querySelector("#add-button");
+const proceedButton = document.querySelector(".proceed-btn");
+const tutorial = document.querySelector(".tutorial");
 
 const shoppingList = document.querySelector("#shopping-list");
 //function to clear input field
@@ -72,7 +74,11 @@ function appendListItem(item) {
 	let itemID = item[0];
 	let itemValue = item[1];
 	const shoppingListItem = document.createElement("li");
+	let trashIconImage = document.createElement("img");
+	trashIconImage.srcset =
+		"/img/trash-icon-24.png 600w, /img/trash-icon.png 1200w ";
 	shoppingListItem.textContent = `${itemValue}`;
+	shoppingListItem.appendChild(trashIconImage);
 
 	shoppingList.appendChild(shoppingListItem);
 	shoppingListItem.addEventListener("click", function () {
@@ -84,3 +90,9 @@ function appendListItem(item) {
 function clearShoppingList() {
 	shoppingList.innerHTML = " ";
 }
+
+//toggle tutorial screen.
+proceedButton.addEventListener("click", function () {
+	console.log("working");
+	tutorial.classList.add("display-none");
+});

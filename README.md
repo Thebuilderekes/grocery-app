@@ -29,6 +29,3 @@ using onValue function:
 4. The groceryList variable is assigned the values of the snapshot object using Object.values().
 5. The groceryList is logged to the console using console.log()
 
-## challenges that I faced and solution
-
-I ran into an issue trying to get firebase URL to work with using the import keyword and I had error with ESM and identifying my file as a module. The solution was to attach `type = "module"` to the script tags.
